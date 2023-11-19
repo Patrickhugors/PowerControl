@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Adicionar Eletrodomésticos</title>
+    <link rel="stylesheet" href="/src/assets/css/style.css">
+    <style>
+        .container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        select, input[type="text"] {
+            width: 210px;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/src/html/eletrod.html" class="back-button">Voltar</a>
+        <h1 class="titulo">Adicionar <br> Eletrodomésticos</h1>
+        <form id="eletroForm" action="\src\php\novo.php" method="post" onsubmit="return validateForm()">
+            <h2 class="subtitulo">Eletrodoméstico</h2>
+            <select name="eletrodomestico" id="eletrodomesticoSelect" onchange="showInput()">
+                <option value="Selecione" disabled selected>Selecione</option>
+                <option value="Aparelho de Ar Condicionado">Ar Condicionado</option>
+                <option value="Aspirador de Pó">Aspirador de Pó</option>
+                <option value="Computador">Computador</option>
+                <option value="Ferro de Passar Roupa">Ferro de Passar Roupa</option>
+                <option value="Forno Elétrico ou a Gás">Forno Elétrico</option>
+                <option value="Geladeira/Refrigerador">Geladeira/Refrigerador</option>
+                <option value="Máquina de Lavar Louça">Máquina de Lavar Louça</option>
+                <option value="Máquina de Lavar Roupa">Máquina de Lavar Roupa</option>
+                <option value="Micro-ondas">Micro-ondas</option>
+                <option value="Televisão">Televisão</option>
+                <option value="Ventilador">Ventilador</option>
+                <option value="Video-Game">Video-Game</option>
+                <option value="Outro">Outro</option>
+            </select>
+            <input type="text" name="eletrodomestico" id="eletrodomesticoInput" placeholder="Outro" style="display: none;">
+            <h2 class="subtitulo">Consumo (kWh)</h2>
+            <input type="text" name="consumo" placeholder="Consumo">
+            <h2 class="subtitulo">Uso diário (h)</h2>
+            <input type="text" name="horas" placeholder="Horas">
+            <h2 class="subtitulo">Quantidade</h2>
+            <input type="text" name="quantidade" placeholder="Quantidade">
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+    <script>
+         function showInput() {
+    var select = document.getElementById("eletrodomesticoSelect");
+    var input = document.getElementById("eletrodomesticoInput");
+
+    if (select.value === "Outro") {
+        input.style.display = "block";
+    } else {
+        input.style.display = "none";
+    }
+    
+    input.value = select.value;
+}
+
+
+        function validateForm() {
+            var select = document.getElementById("eletrodomesticoSelect");
+
+            if (select.value === "Selecione") {
+                alert("Por favor, selecione um eletrodoméstico válido.");
+                return false; 
+            }
+
+            return true; 
+        }
+    </script>
+</body>
+</html>

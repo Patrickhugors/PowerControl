@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ajustar Tarifa</title>
+    <link rel="stylesheet" href="/src/assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      select, input[type="text"] {
+          width: 210px;
+          padding: 8px;
+          margin-bottom: 10px;
+      }
+  </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/src/html/config.html" class="back-button">Voltar</a>     
+        <h1 class="titulo">Ajustar Tarifa</h1>
+        <form action="/src/php/tarifa.php" method="POST" onsubmit="return validarFormulario()">
+            <h2 class="subtitulo">Distribuidora</h2>
+            <select id="distribuidora" name="distribuidora">
+                <option value="" selected>Carregando...</option>
+            </select>
+            <h2 class="subtitulo">Nome da Distribuidora</h2>
+            <input type="text" id="nomeDistribuidora" name="nomeDistribuidora" readonly>
+            <h2 class="subtitulo">UF</h2>
+            <input type="text" id="uf" name="uf" readonly>
+            <h2 class="subtitulo">Tarifa (R$/kWh)</h2>
+            <input type="text" id="tarifa" name="tarifa" required readonly>
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+
+    <script>
+                $(document).ready(function() {
+              $.ajax({
+                  type: 'POST',
+                  url: '/src/php/tarifasAneel.php',
+                  dataType: 'html',
+                  success: function(data) {
+                      $('#distribuidora').html(data);
+                  }
+              });
+
+              $('#distribuidora').change(function() {
+                  var selectedOption = $(this).val();
+
+                  if (selectedOption !== '') {
+                      var distribuidora = $('#distribuidora option:selected').data('distribuidora');
+                      var UF = $('#distribuidora option:selected').data('uf');
+                      var tarifa = $('#distribuidora option:selected').data('tarifa');
+                      
+                      $('#nomeDistribuidora').val(distribuidora);
+                      $('#uf').val(UF);
+                      $('#tarifa').val(tarifa);
+                  } else {
+                      $('#nomeDistribuidora, #uf, #tarifa').val('');
+                  }
+              });
+          });
+    </script>
+</body>
+</html>
