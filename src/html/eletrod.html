@@ -26,7 +26,7 @@
   <script>
     $(document).ready(function() {
       $.ajax({
-        url: "../php/eletrod.php",
+        url: "../../api/eletrod.php",
         method: "GET",
         success: function(data) {
           $(".dropdown").html(data);
@@ -37,7 +37,7 @@
         var itemId = $(this).val();
         if (itemId !== "") {
           $.ajax({
-            url: "../php/buscar_dados.php",
+            url: "../../api/buscar_dados.php",
             method: "POST",
             data: {id: itemId},
             success: function(data) {
@@ -61,7 +61,7 @@
         var quantidade = $("#quantidade").val();
 
         $.ajax({
-          url: "../php/atualizar_dados.php",
+          url: "../../api/atualizar_dados.php",
           method: "POST",
           data: {
             id: itemId,
@@ -81,7 +81,7 @@
         if (itemId !== "") {
           if (confirm("Tem certeza que deseja excluir este eletrodoméstico?")) {
             $.ajax({
-              url: "../php/excluir_eletro.php",
+              url: "../../api/excluir_eletro.php",
               method: "POST",
               data: {id: itemId},
               success: function() {

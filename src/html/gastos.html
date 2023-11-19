@@ -11,7 +11,7 @@
         $(document).ready(function() {
             // Fazer a requisição AJAX para buscar as contas
             $.ajax({
-                url: "../php/buscar_contas.php",
+                url: "../../api/buscar_contas.php",
                 type: "GET",
                 dataType: "json",
                 success: function(response) {
@@ -33,7 +33,7 @@
     <script>
         function buscarDadosGrafico() {
             $.ajax({
-                url: "../php/consultagrafico.php",
+                url: "../../api/consultagrafico.php",
                 type: "GET",
                 dataType: "json",
                 success: function(data) {

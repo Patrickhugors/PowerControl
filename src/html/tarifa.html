@@ -17,7 +17,7 @@
     <div class="container">
         <a href="../html/config.html" class="back-button">Voltar</a>     
         <h1 class="titulo">Ajustar Tarifa</h1>
-        <form action="../php/tarifa.php" method="POST" onsubmit="return validarFormulario()">
+        <form action="../../api/tarifa.php" method="POST" onsubmit="return validarFormulario()">
             <h2 class="subtitulo">Distribuidora</h2>
             <select id="distribuidora" name="distribuidora">
                 <option value="" selected>Carregando...</option>
@@ -36,7 +36,7 @@
                 $(document).ready(function() {
               $.ajax({
                   type: 'POST',
-                  url: '../php/tarifasAneel.php',
+                  url: '../../api/tarifasAneel.php',
                   dataType: 'html',
                   success: function(data) {
                       $('#distribuidora').html(data);

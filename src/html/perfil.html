@@ -11,7 +11,7 @@
     <script>
         $(document).ready(function() {
             $.ajax({
-                url: "../php/verificar_imagem.php",
+                url: "../../api/verificar_imagem.php",
                 type: 'GET',
                 dataType: 'json',
                 success: function(data) {
@@ -29,7 +29,7 @@
         });
         function buscarDadosGrafico() {
             $.ajax({
-                url: "../php/consultagrafico.php",
+                url: "../../api/consultagrafico.php",
                 type: "GET",
                 dataType: "json",
                 success: function(data) {
@@ -96,7 +96,7 @@
         <div id="profile-picture" class="circle"></div>
         <br>
         <br>
-        <form action="../php/upload.php" method="POST" enctype="multipart/form-data" onsubmit="return validarFormulario()">
+        <form action="../../api/upload.php" method="POST" enctype="multipart/form-data" onsubmit="return validarFormulario()">
             <label for="imagem-input" class="custom-file-upload">
               Alterar Foto do Perfil
             </label>

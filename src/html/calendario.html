@@ -105,7 +105,7 @@
               $('.calendar').fullCalendar('renderEvent', eventData, true);
 
               // Enviar dados do evento para o arquivo PHP
-              $.post('../php/salvar_evento.php', {
+              $.post('../../api/salvar_evento.php', {
 titulo: eventTitle,
 data: eventMoment.format('YYYY-MM-DD')
 }, function(data) {
@@ -127,7 +127,7 @@ alert('Data inválida. Por favor, digite no formato DD/MM/YYYY.');
   }
 
   // Carregar os eventos do banco de dados e exibir na lista
-  $.get("../php/carregar_eventos.php", function(data) {
+  $.get("../../api/carregar_eventos.php", function(data) {
     if (data.success) {
       var eventos = data.eventos;
       for (var i = 0; i < eventos.length; i++) {
@@ -151,7 +151,7 @@ $(document).on('click', '.delete-event-button', function() {
     });
 
     // Remova o evento do banco de dados
-    $.post("../php/excluir_evento.php", {
+    $.post("../../api/excluir_evento.php", {
       titulo: eventTitle,
       data: eventDate
     }, function(data) {
