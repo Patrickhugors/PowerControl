@@ -17,7 +17,7 @@
             $data = $stmt_result->fetch_assoc();
             if ($data['senha'] === $senha) {
                 $_SESSION['id_usuario'] = $data['id'];
-                header("Location: src/html/perfil.html");
+                header("Location: ../html/perfil.html");
                 exit();
             } else {
                 echo "<script>
