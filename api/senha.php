@@ -22,18 +22,18 @@
          if ($stmt->affected_rows > 0) {
              echo "<script>
                  alert('Senha atualizada com sucesso!');
-                 window.location.href = '../html/config.html';
+                 window.location.href = '../src/html/config.html';
              </script>";
          } else {
              echo "<script>
                  alert('Erro ao atualizar a senha!');
-                 window.location.href = '../html/senha.html';
+                 window.location.href = '../src/html/senha.html';
              </script>";
          }
      } else {
          echo "<script>
              alert('Senha atual incorreta!');
-             window.location.href = '../html/senha.html';
+             window.location.href = '../src/html/senha.html';
          </script>";
      }
  

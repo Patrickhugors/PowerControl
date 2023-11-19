@@ -19,7 +19,7 @@
             // Login já existe, exibe mensagem de erro
             echo "<script>
                 alert('Email já cadastrado no sistema');
-                window.location.href = '../html/cadastro.html';
+                window.location.href = '../src/html/cadastro.html';
             </script>";
         } else {
             // Login não existe, executa a inserção
@@ -28,7 +28,7 @@
             $stmt->execute();
             echo "<script>
                 alert('Registro feito com sucesso');
-                window.location.href = '../html/login.html';
+                window.location.href = '../src/html/login.html';
             </script>";
             $stmt->close();
             $mysqli->close();

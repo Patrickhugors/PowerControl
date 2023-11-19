@@ -24,12 +24,12 @@ if ($stmt = $mysqli->prepare("INSERT INTO tarifa (valor, companhia, id_usuario, 
     if ($stmt->affected_rows > 0) {
         echo "<script>
             alert('Tarifa registrada com sucesso!');
-            window.location.href = '../html/config.html';
+            window.location.href = '../src/html/config.html';
         </script>";
     } else {
         echo "<script>
             alert('Erro ao registrar tarifa!');
-            window.location.href = '../html/tarifa.html';
+            window.location.href = '../src/html/tarifa.html';
         </script>";
     }
 

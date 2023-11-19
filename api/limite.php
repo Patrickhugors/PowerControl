@@ -16,12 +16,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($stmt->affected_rows > 0) {
             echo "<script>
                 alert('Limite previsto registrado com sucesso!');
-                window.location.href = '../html/config.html';
+                window.location.href = '../src/html/config.html';
             </script>";
         } else {
             echo "<script>
                 alert('Erro ao registrar o limite previsto!');
-                window.location.href = '../html/limite.html';
+                window.location.href = '../src/html/limite.html';
             </script>";
         }
 

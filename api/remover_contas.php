@@ -24,9 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $consulta->bind_param("s", $idUsuario);
 
 if ($consulta->execute()) {
-    echo '<script>alert("Contas removidas com sucesso!"); window.location.href="../html/config.html";</script>';
+    echo '<script>alert("Contas removidas com sucesso!"); window.location.href="../src/html/config.html";</script>';
 } else {
-    echo '<script>alert("Ocorreu um erro ao remover as contas."); window.location.href="../html/config.html";</script>';
+    echo '<script>alert("Ocorreu um erro ao remover as contas."); window.location.href="../src/html/config.html";</script>';
 }
 
 $consulta->close();

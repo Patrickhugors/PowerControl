@@ -22,13 +22,13 @@
             } else {
                 echo "<script>
                     alert('E-mail ou senha inválida');
-                    window.location.href = '../html/login.html';
+                    window.location.href = '../src/html/login.html';
                 </script>";
             }
         } else {
             echo "<script>
                 alert('E-mail ou senha inválida');
-                window.location.href = '../html/login.html';
+                window.location.href = '../src/html/login.html';
             </script>";
         }
     }
