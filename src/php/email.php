@@ -4,7 +4,7 @@ $login_ativo = $_SESSION['id_usuario'];
 $novo_email = $_POST['novo_email'];
 $senha = $_POST['senha'];
 
-$mysqli = new mysqli("localhost", "root", "", "clientes");
+$mysqli = new mysqli("powercontrol.c3ihimjgulac.us-east-1.rds.amazonaws.com", "root", "adminpowercontrol", "clientes");
 
 if ($mysqli->connect_error) {
     die('A conexão falhou: ' . $mysqli->connect_error);

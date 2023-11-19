@@ -4,7 +4,7 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $limite = isset($_POST['limite']) ? str_replace(',', '.', $_POST['limite']) : '';
 
-    $mysqli = new mysqli("localhost", "root", "", "clientes");
+    $mysqli = new mysqli("powercontrol.c3ihimjgulac.us-east-1.rds.amazonaws.com", "root", "adminpowercontrol", "clientes");
 
     if ($mysqli->connect_error) {
         die('A conexão falhou: ' . $mysqli->connect_error);

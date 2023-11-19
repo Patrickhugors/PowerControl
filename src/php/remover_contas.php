@@ -9,7 +9,7 @@ if (!isset($_SESSION['id_usuario'])) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $idUsuario = $_SESSION['id_usuario'];
 
-    $mysqli = new mysqli("localhost", "root", "", "clientes");
+    $mysqli = new mysqli("powercontrol.c3ihimjgulac.us-east-1.rds.amazonaws.com", "root", "adminpowercontrol", "clientes");
 
     if ($mysqli->connect_error) {
         die("Erro na conexão com o banco de dados: " . $mysqli->connect_error);

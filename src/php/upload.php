@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
-        $mysqli = new mysqli("localhost", "root", "", "clientes");
+        $mysqli = new mysqli("powercontrol.c3ihimjgulac.us-east-1.rds.amazonaws.com", "root", "adminpowercontrol", "clientes");
         if ($mysqli->connect_errno) {
             die("Falha na conexão com o banco de dados: " . $mysqli->connect_error);
         }

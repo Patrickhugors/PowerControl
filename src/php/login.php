@@ -3,7 +3,7 @@
     $login = $_POST['login'];
     $senha = $_POST['senha'];
 
-    $mysqli = new mysqli("localhost", "root", "", "clientes");
+    $mysqli = new mysqli("powercontrol.c3ihimjgulac.us-east-1.rds.amazonaws.com", "root", "adminpowercontrol", "clientes");
 
     if ($mysqli->connect_error) {
         die('A conexão falhou: ' . $mysqli->connect_error);
@@ -16,7 +16,7 @@
         if ($stmt_result->num_rows > 0) {
             $data = $stmt_result->fetch_assoc();
             if ($data['senha'] === $senha) {
-                $_SESSION['id_usuario'] = $data['id']; // Salva o ID do usuário na sessão
+                $_SESSION['id_usuario'] = $data['id'];
                 header("Location: /src/html/perfil.html");
                 exit();
             } else {

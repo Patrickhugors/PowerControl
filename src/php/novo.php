@@ -6,7 +6,7 @@
     $horas = $_POST['horas'];
     $quantidade = $_POST['quantidade'];
 
-    $mysqli = new mysqli("localhost", "root", "", "clientes");
+    $mysqli = new mysqli("powercontrol.c3ihimjgulac.us-east-1.rds.amazonaws.com", "root", "adminpowercontrol", "clientes");
 
     if ($mysqli->connect_error) {
         die('A conexao falhou : ' . $mysqli->connect_error);

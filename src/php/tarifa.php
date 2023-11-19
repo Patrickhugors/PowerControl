@@ -5,7 +5,7 @@ $valor = isset($_POST['tarifa']) ? str_replace(',', '.', $_POST['tarifa']) : '';
 $companhia = isset($_POST['nomeDistribuidora']) ? $_POST['nomeDistribuidora'] : '';
 $UF = isset($_POST['uf']) ? $_POST['uf'] : '';
 
-$mysqli = new mysqli("localhost", "root", "", "clientes");
+$mysqli = new mysqli("powercontrol.c3ihimjgulac.us-east-1.rds.amazonaws.com", "root", "adminpowercontrol", "clientes");
 
 // Verificar a conexão
 if ($mysqli->connect_error) {
