@@ -16,7 +16,7 @@
         $stmt->execute();
         echo "<script>
             alert('Produto adicionado com sucesso');
-            window.location.href = '/src/html/novo.html';
+            window.location.href = '../html/novo.html';
         </script>";
         $stmt->close();
         $mysqli->close();

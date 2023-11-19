@@ -38,13 +38,13 @@ input[type="submit"] {
 
 
     </style>
-    <link rel="stylesheet" href="/src/assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
     <div class="container">
-        <a href="/src/html/config.html" class="back-button">Voltar</a>     
+        <a href="../html/config.html" class="back-button">Voltar</a>     
         <h1>Adicionar Conta de Luz</h1>
-        <form method="POST" action="\src\php\contas.php">
+        <form method="POST" action="../php/contas.php">
             <label for="valor" class="valor-label">Valor:</label>
             <br>
             <input type="number" name="valor" id="valor" step="0.01" required pattern="^\d+(,\d{1,2})?$">
@@ -70,7 +70,7 @@ input[type="submit"] {
             <input type="submit" value="Salvar">
         </form>
 
-        <form method="POST" action="\src\php\remover_contas.php">
+        <form method="POST" action="../php/remover_contas.php">
             <input type="submit" value="Remover Contas">
         </form>
     </div>

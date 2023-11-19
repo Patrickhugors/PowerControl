@@ -22,18 +22,18 @@ if ($mysqli->connect_error) {
         if ($stmt->affected_rows > 0) {
             echo "<script>
                 alert('Email atualizado com sucesso!');
-                window.location.href = '/src/html/config.html';
+                window.location.href = '../html/config.html';
             </script>";
         } else {
             echo "<script>
                 alert('Erro ao atualizar o email!');
-                window.location.href = '/src/html/email.html';
+                window.location.href = '../html/email.html';
             </script>";
         }
     } else {
         echo "<script>
             alert('Senha incorreta!');
-            window.location.href = '/src/html/email.html';
+            window.location.href = '../html/email.html';
         </script>";
     }
 

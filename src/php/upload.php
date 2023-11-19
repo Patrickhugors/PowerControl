@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (move_uploaded_file($_FILES['imagem']['tmp_name'], $caminhoArquivo)) {
             if ($mysqli->query($sql) === true) {
-                echo '<script>alert("Imagem enviada com sucesso!"); window.location.href="/src/html/perfil.html";</script>';
+                echo '<script>alert("Imagem enviada com sucesso!"); window.location.href="../html/perfil.html";</script>';
             } else {
                 echo '<script>alert("Erro ao inserir ou atualizar os detalhes da imagem no banco de dados: ' . $mysqli->error . '");</script>';
             }

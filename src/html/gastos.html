@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Gastos</title>
-    <link rel="stylesheet" href="/src/assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -11,7 +11,7 @@
         $(document).ready(function() {
             // Fazer a requisição AJAX para buscar as contas
             $.ajax({
-                url: "/src/php/buscar_contas.php",
+                url: "../php/buscar_contas.php",
                 type: "GET",
                 dataType: "json",
                 success: function(response) {
@@ -33,7 +33,7 @@
     <script>
         function buscarDadosGrafico() {
             $.ajax({
-                url: "/src/php/consultagrafico.php",
+                url: "../php/consultagrafico.php",
                 type: "GET",
                 dataType: "json",
                 success: function(data) {
@@ -89,7 +89,7 @@
 </head>
 <body>
     <div class="container">
-        <a href="/src/html/perfil.html" class="back-button">Voltar</a>
+        <a href="../html/perfil.html" class="back-button">Voltar</a>
         <h1 class="title">Histórico de contas</h1>
         <div class="chart-container">
             <canvas id="myChart"></canvas>
@@ -98,11 +98,11 @@
             <ul class="list" id="contas-list"></ul>
         </div>
         <div class="buttons profile-buttons">
-            <a href="/src/html/perfil.html" class="btn"><i class="fa fa-perfil"></i></a>
-            <a href="/src/html/gastos.html" class="btnActive"><i class="fa fa-gastos"></i></a>
-            <a href="/src/html/calendario.html" class="btn"><i class="fa fa-calendario"></i></a>
-            <a href="/src/html/previsao.html" class="btn"><i class="fa fa-previsao"></i></a>
-            <a href="/src/html/eletrod.html" class="btn"><i class="fa fa-eletro"></i></a>
+            <a href="../html/perfil.html" class="btn"><i class="fa fa-perfil"></i></a>
+            <a href="../html/gastos.html" class="btnActive"><i class="fa fa-gastos"></i></a>
+            <a href="../html/calendario.html" class="btn"><i class="fa fa-calendario"></i></a>
+            <a href="../html/previsao.html" class="btn"><i class="fa fa-previsao"></i></a>
+            <a href="../html/eletrod.html" class="btn"><i class="fa fa-eletro"></i></a>
         </div>
     </div>
 </body>

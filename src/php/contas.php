@@ -37,9 +37,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if ($consulta->execute()) {
-        echo '<script>alert("Conta de luz inserida/atualizada com sucesso!"); window.location.href="/src/html/config.html";</script>';
+        echo '<script>alert("Conta de luz inserida/atualizada com sucesso!"); window.location.href="../html/config.html";</script>';
     } else {
-        echo '<script>alert("Ocorreu um erro ao inserir/atualizar a conta de luz."); window.location.href="/src/html/config.html";</script>';
+        echo '<script>alert("Ocorreu um erro ao inserir/atualizar a conta de luz."); window.location.href="../html/config.html";</script>';
     }
 
     $consulta->close();
