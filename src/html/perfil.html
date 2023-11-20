@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <style>
+        #profile-picture {
+    background-image: url('../assets/images/usuario.jpg');
+    background-size: cover;
+}
+
+    </style>
     <meta charset="UTF-8"/>
     <title>Perfil</title>
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -18,17 +25,9 @@ $(document).ready(function() {
             var profilePicture = $('#profile-picture');
 
             if (data.caminhoImagem) {
-                // Cria um elemento de imagem e define a URL de dados
                 var imageElement = $('<img>').attr('src', 'data:image/jpeg;base64,' + data.caminhoImagem);
-
-                // Adiciona a imagem ao elemento
                 profilePicture.empty().append(imageElement);
-
-                // Adiciona a classe .circle para manter a formatação do círculo
                 imageElement.addClass('circle');
-            } else {
-                // Define uma imagem padrão se não houver imagem
-                profilePicture.html('<img src="../assets/images/usuario.jpg" alt="Imagem Padrão" class="circle">');
             }
         },
         error: function(xhr, status, error) {
