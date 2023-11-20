@@ -2,12 +2,7 @@
 
 $login_ativo = $_COOKIE['id_usuario'];
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "clientes";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli("powercontrol.c3ihimjgulac.us-east-1.rds.amazonaws.com", "root", "adminpowercontrol", "clientes");
 if ($conn->connect_error) {
   die("Erro na conexão com o banco de dados: " . $conn->connect_error);
 }
