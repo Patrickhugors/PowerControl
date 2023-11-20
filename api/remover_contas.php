@@ -1,5 +1,6 @@
 <?php
 session_start();
+$login_ativo = $_SESSION['id_usuario'];
 
 if (!isset($_SESSION['id_usuario'])) {
     echo "Você precisa estar logado para acessar esta página.";

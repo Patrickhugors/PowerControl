@@ -1,5 +1,6 @@
 <?php
 session_start();
+$login_ativo = $_SESSION['id_usuario'];
 
 // Obtém o ID do usuário ativo na sessão
 $idUsuario = $_SESSION['id_usuario'];

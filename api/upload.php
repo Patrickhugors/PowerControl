@@ -1,4 +1,7 @@
 <?php
+session_start();
+$login_ativo = $_SESSION['id_usuario'];
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
         $mysqli = new mysqli("powercontrol.c3ihimjgulac.us-east-1.rds.amazonaws.com", "root", "adminpowercontrol", "clientes");

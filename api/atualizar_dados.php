@@ -1,4 +1,7 @@
 <?php
+session_start();
+$login_ativo = $_SESSION['id_usuario'];
+
 $selectedItemId = $_POST['id'];
 $consumo = $_POST['consumo'];
 $horas = $_POST['horas'];

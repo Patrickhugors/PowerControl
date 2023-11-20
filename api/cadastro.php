@@ -1,5 +1,7 @@
 <?php
-    session_start();
+session_start();
+    $login_ativo = $_SESSION['id_usuario'];
+
     $nome = $_POST['nome'];
     $login = $_POST['login'];
     $senha = $_POST['senha'];

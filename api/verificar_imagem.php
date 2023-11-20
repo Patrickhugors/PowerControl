@@ -1,11 +1,13 @@
 <?php
+session_start();
+$idUsuario = $_SESSION['id_usuario'];
+
 $mysqli = new mysqli("powercontrol.c3ihimjgulac.us-east-1.rds.amazonaws.com", "root", "adminpowercontrol", "clientes");
 if ($mysqli->connect_errno) {
     echo json_encode(array('error' => 'Falha ao conectar ao MySQL: ' . $mysqli->connect_error));
     exit();
 }
-session_start();
-$idUsuario = $_SESSION['id_usuario'];
+
 $sql = "SELECT caminho FROM imagem WHERE id_usuario = $idUsuario order by 1 desc";
 $resultado = $mysqli->query($sql);
 if ($resultado->num_rows > 0) {

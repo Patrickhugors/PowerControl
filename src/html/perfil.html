@@ -87,6 +87,21 @@
             return true;
         }
         </script>
+        <script>
+            $(document).ready(function() {
+                $.ajax({
+                    url: "../../api/displaySession.php", 
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(data) {
+                        console.log(data);
+                    },
+                    error: function(xhr, status, error) {
+                        console.log('Erro na requisição AJAX:', error);
+                    }
+                });
+            });
+        </script>
 </head>
 <body>
     <div class="container">

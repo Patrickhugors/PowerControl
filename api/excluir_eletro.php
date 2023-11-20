@@ -1,4 +1,7 @@
 <?php
+session_start();
+$login_ativo = $_SESSION['id_usuario'];
+
 $selectedItemId = $_POST['id'];
 
 $mysqli = new mysqli("powercontrol.c3ihimjgulac.us-east-1.rds.amazonaws.com", "root", "adminpowercontrol", "clientes");
