@@ -1,4 +1,5 @@
 <?php
+    ob_start();
     session_start();
     $login = $_POST['login'];
     $senha = $_POST['senha'];
