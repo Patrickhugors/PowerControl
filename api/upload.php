@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 $login_ativo = $_COOKIE['id_usuario'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($mysqli->connect_errno) {
             die("Falha na conexão com o banco de dados: " . $mysqli->connect_error);
         }
-        session_start();
+        
         $idUsuario = $_COOKIE['id_usuario'];
         $nomeArquivo = $_FILES['imagem']['name'];
         $tipoArquivo = $_FILES['imagem']['type'];

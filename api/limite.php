@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 $login_ativo = $_COOKIE['id_usuario'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

@@ -1,6 +1,6 @@
 
 <?php
-session_start();
+
 $login_ativo = $_COOKIE['id_usuario'];
 
 $servername = "localhost";

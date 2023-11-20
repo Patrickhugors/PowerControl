@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    
     $login_ativo = $_COOKIE['id_usuario'];
 
     $mysqli = new mysqli("powercontrol.c3ihimjgulac.us-east-1.rds.amazonaws.com", "root", "adminpowercontrol", "clientes");

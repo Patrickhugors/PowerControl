@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 $login_ativo = $_COOKIE['id_usuario'];
 $valor = isset($_POST['tarifa']) ? str_replace(',', '.', $_POST['tarifa']) : '';
 $companhia = isset($_POST['nomeDistribuidora']) ? $_POST['nomeDistribuidora'] : '';

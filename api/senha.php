@@ -1,5 +1,5 @@
 <?php
- session_start(); 
+  
  $login_ativo = $_COOKIE['id_usuario'];
  $senha_atual = $_POST['senha_atual'];
  $nova_senha = $_POST['nova_senha'];
