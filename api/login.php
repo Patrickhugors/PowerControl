@@ -15,8 +15,7 @@
         if ($stmt_result->num_rows > 0) {
             $data = $stmt_result->fetch_assoc();
             if ($data['senha'] === $senha) {
-                // Set cookies
-                setcookie('id_usuario', $data['id'], time() + (86400 * 30), "/"); // 86400 seconds = 1 day
+                setcookie('id_usuario', $data['id'], time() + (86400 * 30), "/"); 
                 header("Location: ../src/html/perfil.html");
                 exit();
             } else {

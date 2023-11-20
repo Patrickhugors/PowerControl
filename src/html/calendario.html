@@ -104,12 +104,11 @@
               };
               $('.calendar').fullCalendar('renderEvent', eventData, true);
 
-              // Enviar dados do evento para o arquivo PHP
               $.post('../../api/salvar_evento.php', {
 titulo: eventTitle,
 data: eventMoment.format('YYYY-MM-DD')
 }, function(data) {
-console.log(data); // Exibir resposta do servidor no console
+console.log(data); 
 window.location.href="../html/calendario.html";
 if (data.success) {
 adicionarEventoLista(eventTitle, eventMoment.format('DD/MM/YYYY'));
@@ -120,13 +119,12 @@ alert('Data inválida. Por favor, digite no formato DD/MM/YYYY.');
 }
 }
 }
-});  // Função para adicionar um evento à lista
+});  
   function adicionarEventoLista(titulo, data) {
     var listItem = '<li><div class="event-info"><span class="event-title">' + titulo + '</span><span class="event-date">' + data + '</span></div><div class="event-actions"><button class="delete-event-button">Excluir</button></div></li>';
     $('.event-list').append(listItem);
   }
 
-  // Carregar os eventos do banco de dados e exibir na lista
   $.get("../../api/carregar_eventos.php", function(data) {
     if (data.success) {
       var eventos = data.eventos;
@@ -136,8 +134,6 @@ alert('Data inválida. Por favor, digite no formato DD/MM/YYYY.');
     }
   });
 
-  // Lidar com o clique no botão de exclusão
-// Lidar com o clique no botão de exclusão
 $(document).on('click', '.delete-event-button', function() {
   var listItem = $(this).closest('li');
   var eventTitle = listItem.find('.event-title').text();
@@ -145,12 +141,10 @@ $(document).on('click', '.delete-event-button', function() {
 
   var confirmDelete = confirm("Tem certeza que deseja excluir o evento?");
   if (confirmDelete) {
-    // Remova o evento do calendário
     $('.calendar').fullCalendar('removeEvents', function(event) {
       return event.title === eventTitle && moment(event.start).format('DD/MM/YYYY') === eventDate;
     });
 
-    // Remova o evento do banco de dados
     $.post("../../api/excluir_evento.php", {
       titulo: eventTitle,
       data: eventDate
