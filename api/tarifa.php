@@ -4,7 +4,9 @@ $login_ativo = $_COOKIE['id_usuario'];
 
 if (!isset($login_ativo) || empty($login_ativo)) {
     
-  header("Location: ../src/html/login.html");
+    echo "<script>
+    window.location.href = '../src/html/novo.html';
+    </script>"; 
   exit;
 }
 $valor = isset($_POST['tarifa']) ? str_replace(',', '.', $_POST['tarifa']) : '';

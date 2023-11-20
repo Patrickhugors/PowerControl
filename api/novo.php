@@ -3,10 +3,11 @@
 $login_ativo = $_COOKIE['id_usuario'];
 
 if (!isset($login_ativo) || empty($login_ativo)) {
+    echo "<script>
+    window.location.href = '../src/html/novo.html';
+    </script>";  
+    }
     
-  header("Location: ../src/html/login.html");
-  exit;
-}
     $nome = $_POST['eletrodomestico']; 
     $consumo = $_POST['consumo'];
     $horas = $_POST['horas'];
