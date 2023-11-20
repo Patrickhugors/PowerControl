@@ -1,6 +1,6 @@
 <?php
 
-$login_ativo = $_COOKIE['id_usuario'];
+$idUsuario = $_COOKIE['id_usuario'];
 
 $conn = new mysqli("powercontrol.c3ihimjgulac.us-east-1.rds.amazonaws.com", "root", "adminpowercontrol", "clientes");
 if ($conn->connect_error) {
