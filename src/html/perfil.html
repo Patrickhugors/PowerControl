@@ -26,6 +26,23 @@
                 }
             });
         });
+
+        function verificarSessao() {
+                $.ajax({
+                    url: "../../api/valida_sessao.php",
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(data) {
+                        if (!data.logado) {
+                            window.location.href = "../html/login.html";
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.log('Erro na requisição AJAX:', error);
+                    }
+                });
+            }
+
         function buscarDadosGrafico() {
             $.ajax({
                 url: "../../api/consultagrafico.php",
