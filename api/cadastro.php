@@ -1,12 +1,5 @@
 <?php
 
-if (!isset($login_ativo) || empty($login_ativo)) {
-    
-    echo "<script>
-    window.location.href = '../src/html/novo.html';
-    </script>"; 
-  exit;
-}
     $nome = $_POST['nome'];
     $login = $_POST['login'];
     $senha = $_POST['senha'];
