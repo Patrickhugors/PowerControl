@@ -1,10 +1,4 @@
 <?php
-    $sessionPath = '../session';
-    if (!is_dir($sessionPath)) {
-        mkdir($sessionPath, 0777, true);
-    }
-    ini_set('session.save_path', $sessionPath);
-
     session_start();
 
     $login = $_POST['login'];
