@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $login_ativo = $_SESSION['id_usuario'];
+    $login_ativo = $_COOKIE['id_usuario'];
     $nome = $_POST['eletrodomestico']; 
     $consumo = $_POST['consumo'];
     $horas = $_POST['horas'];

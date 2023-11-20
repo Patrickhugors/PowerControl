@@ -6,7 +6,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "clientes";
-$idUsuario = $_SESSION['id_usuario'];
+$idUsuario = $_COOKIE['id_usuario'];
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {

@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-$login_ativo = $_SESSION['id_usuario'];
+$login_ativo = $_COOKIE['id_usuario'];
 
 $servername = "localhost";
 $username = "root";

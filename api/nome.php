@@ -1,6 +1,6 @@
 <?php
 session_start();
-$login_ativo = $_SESSION['id_usuario'];
+$login_ativo = $_COOKIE['id_usuario'];
 $novo_nome = $_POST['novo_nome'];
 $senha = $_POST['senha'];
 

@@ -1,6 +1,6 @@
 <?php
 session_start();
-$login_ativo = $_SESSION['id_usuario'];
+$login_ativo = $_COOKIE['id_usuario'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $limite = isset($_POST['limite']) ? str_replace(',', '.', $_POST['limite']) : '';

@@ -1,9 +1,9 @@
 <?php
 session_start();
-$login_ativo = $_SESSION['id_usuario'];
+$login_ativo = $_COOKIE['id_usuario'];
 
 // Obtém o ID do usuário ativo na sessão
-$idUsuario = $_SESSION['id_usuario'];
+$idUsuario = $_COOKIE['id_usuario'];
 
 // Função para obter o último valor da tarifa
 function obterUltimoValorTarifa($conexao, $idUsuario) {

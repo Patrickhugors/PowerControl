@@ -1,8 +1,8 @@
 <?php
 session_start();
-$login_ativo = $_SESSION['id_usuario'];
+$login_ativo = $_COOKIE['id_usuario'];
 
-if (!isset($_SESSION['id_usuario'])) {
+if (!isset($_COOKIE['id_usuario'])) {
     echo "Você precisa estar logado para acessar esta página.";
     exit;
 }
@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $valor = $_POST['valor'];
     $valor = str_replace(',', '.', $valor);
     $mes = $_POST['mes'];
-    $idUsuario = $_SESSION['id_usuario'];
+    $idUsuario = $_COOKIE['id_usuario'];
 
     $mysqli = new mysqli("powercontrol.c3ihimjgulac.us-east-1.rds.amazonaws.com", "root", "adminpowercontrol", "clientes");
 

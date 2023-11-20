@@ -1,6 +1,6 @@
 <?php
 session_start();
-$login_ativo = $_SESSION['id_usuario'];
+$login_ativo = $_COOKIE['id_usuario'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             die("Falha na conexão com o banco de dados: " . $mysqli->connect_error);
         }
         session_start();
-        $idUsuario = $_SESSION['id_usuario'];
+        $idUsuario = $_COOKIE['id_usuario'];
         $nomeArquivo = $_FILES['imagem']['name'];
         $tipoArquivo = $_FILES['imagem']['type'];
         $caminhoArquivo = "../assets/images/FotosUsuarios/" . $nomeArquivo;
