@@ -1,6 +1,6 @@
 <?php
 session_start();
-$idUsuario = $_SESSION['id_usuario'];
+$idUsuario = $_COOKIE['id_usuario'];
 
 $mysqli = new mysqli("powercontrol.c3ihimjgulac.us-east-1.rds.amazonaws.com", "root", "adminpowercontrol", "clientes");
 if ($mysqli->connect_errno) {

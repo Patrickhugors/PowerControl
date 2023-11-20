@@ -18,7 +18,6 @@
                     if (data.caminhoImagem !== 'sem_imagem') {
                         $('#profile-picture').css('background-image', 'url("' + data.caminhoImagem + '")');
                     } else {
-                        // Usar a imagem padrão se o usuário não tiver uma imagem personalizada
                         $('#profile-picture').css('background-image', 'url("../assets/images/usuario.jpg")');
                     }
                 },
@@ -83,24 +82,8 @@
                 alert("Por favor, selecione apenas arquivos de imagem.");
                 return false;
             }
-        
             return true;
         }
-        </script>
-        <script>
-            $(document).ready(function() {
-                $.ajax({
-                    url: "../../api/displaySession.php", 
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function(data) {
-                        console.log(data);
-                    },
-                    error: function(xhr, status, error) {
-                        console.log('Erro na requisição AJAX:', error);
-                    }
-                });
-            });
         </script>
 </head>
 <body>

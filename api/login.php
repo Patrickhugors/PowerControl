@@ -1,5 +1,4 @@
 <?php
-    session_start();
     $login = $_POST['login'];
     $senha = $_POST['senha'];
 
@@ -16,7 +15,8 @@
         if ($stmt_result->num_rows > 0) {
             $data = $stmt_result->fetch_assoc();
             if ($data['senha'] === $senha) {
-                $_SESSION['id_usuario'] = $data['id'];
+                // Set cookies
+                setcookie('id_usuario', $data['id'], time() + (86400 * 30), "/"); // 86400 seconds = 1 day
                 header("Location: ../src/html/perfil.html");
                 exit();
             } else {
