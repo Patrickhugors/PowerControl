@@ -3,11 +3,8 @@
 $login_ativo = $_COOKIE['id_usuario'];
 
 if (!isset($login_ativo) || empty($login_ativo)) {
-    
-    echo "<script>
-    window.location.href = '../src/html/novo.html';
-    </script>"; 
-  exit;
+    echo json_encode(array('caminhoImagem' => '../assets/images/default_image.jpg'));
+    exit;
 }
 
 $idUsuario = $_COOKIE['id_usuario'];
@@ -18,14 +15,21 @@ if ($mysqli->connect_errno) {
     exit();
 }
 
-$sql = "SELECT caminho FROM imagem WHERE id_usuario = $idUsuario order by 1 desc";
-$resultado = $mysqli->query($sql);
-if ($resultado->num_rows > 0) {
-    $caminhoImagem = $resultado->fetch_assoc()['caminho'];
+$sql = "SELECT image_data FROM user_images WHERE id_usuario = ? ORDER BY id DESC LIMIT 1";
+$stmt = $mysqli->prepare($sql);
+$stmt->bind_param("i", $idUsuario);
+$stmt->execute();
+$stmt->bind_result($imageData);
 
-    echo json_encode(array('caminhoImagem' => $caminhoImagem));
+if ($stmt->fetch()) {
+    // Envia os dados da imagem como base64
+    echo json_encode(array('caminhoImagem' => base64_encode($imageData)));
 } else {
-    echo json_encode(array('caminhoImagem' => 'sem_imagem'));
+    // Se não houver imagem, retorna a imagem padrão
+    $defaultImage = file_get_contents("../assets/images/default_image.jpg");
+    echo json_encode(array('caminhoImagem' => base64_encode($defaultImage)));
 }
+
+$stmt->close();
 $mysqli->close();
 ?>

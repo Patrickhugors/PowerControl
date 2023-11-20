@@ -9,23 +9,34 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        $(document).ready(function() {
-            $.ajax({
-                url: "../../api/verificar_imagem.php",
-                type: 'GET',
-                dataType: 'json',
-                success: function(data) {
-                    if (data.caminhoImagem !== 'sem_imagem') {
-                        $('#profile-picture').css('background-image', 'url("' + data.caminhoImagem + '")');
-                    } else {
-                        $('#profile-picture').css('background-image', 'url("../assets/images/usuario.jpg")');
-                    }
-                },
-                error: function(xhr, status, error) {
-                    console.log('Erro na requisição AJAX:', error);
-                }
-            });
-        });
+$(document).ready(function() {
+    $.ajax({
+        url: "../../api/verificar_imagem.php",
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            var profilePicture = $('#profile-picture');
+
+            if (data.caminhoImagem) {
+                // Cria um elemento de imagem e define a URL de dados
+                var imageElement = $('<img>').attr('src', 'data:image/jpeg;base64,' + data.caminhoImagem);
+
+                // Adiciona a imagem ao elemento
+                profilePicture.empty().append(imageElement);
+
+                // Adiciona a classe .circle para manter a formatação do círculo
+                imageElement.addClass('circle');
+            } else {
+                // Define uma imagem padrão se não houver imagem
+                profilePicture.html('<img src="../assets/images/usuario.jpg" alt="Imagem Padrão" class="circle">');
+            }
+        },
+        error: function(xhr, status, error) {
+            console.log('Erro na requisição AJAX:', error);
+        }
+    });
+});
+
         function buscarDadosGrafico() {
             $.ajax({
                 url: "../../api/consultagrafico.php",
@@ -96,11 +107,11 @@
         <br>
         <form action="../../api/upload.php" method="POST" enctype="multipart/form-data" onsubmit="return validarFormulario()">
             <label for="imagem-input" class="custom-file-upload">
-              Alterar Foto do Perfil
+                Alterar Foto do Perfil
             </label>
-            <input type="file" name="imagem" id="imagem-input" accept="image/*" required>
+            <input type="file" name="image" id="imagem-input" accept="image/*" required>
             <button type="submit" class="custom-button">Enviar</button>
-          </form>          
+        </form>          
         <div class="chart-container">
             <canvas id="myChart"></canvas>
         </div>
