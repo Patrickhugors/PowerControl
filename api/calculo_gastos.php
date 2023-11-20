@@ -2,7 +2,7 @@
 
 $login_ativo = $_COOKIE['id_usuario'];
 
-if (!isset($login_ativo)) {
+if (!isset($login_ativo) || empty($login_ativo)) {
     
   header("Location: ../src/html/login.html");
   exit;
