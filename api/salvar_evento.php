@@ -1,7 +1,12 @@
-
 <?php
 
 $login_ativo = $_COOKIE['id_usuario'];
+
+if (!isset($login_ativo)) {
+    
+  header("Location: ../src/html/login.html");
+  exit;
+}
 
 $conn = new mysqli("powercontrol.c3ihimjgulac.us-east-1.rds.amazonaws.com", "root", "adminpowercontrol", "clientes");
 if ($conn->connect_error) {

@@ -1,5 +1,12 @@
 <?php
 
+$login_ativo = $_COOKIE['id_usuario'];
+
+if (!isset($login_ativo)) {
+    
+  header("Location: ../src/html/login.html");
+  exit;
+}
 $idUsuario = $_COOKIE['id_usuario'];
 
 function obterUltimoValorTarifa($conexao, $idUsuario) {

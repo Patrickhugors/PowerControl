@@ -2,6 +2,12 @@
 
 $login_ativo = $_COOKIE['id_usuario'];
 
+if (!isset($login_ativo)) {
+    
+  header("Location: ../src/html/login.html");
+  exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $limite = isset($_POST['limite']) ? str_replace(',', '.', $_POST['limite']) : '';
 

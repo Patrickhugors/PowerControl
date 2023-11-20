@@ -2,6 +2,12 @@
 
 $login_ativo = $_COOKIE['id_usuario'];
 
+if (!isset($login_ativo)) {
+    
+  header("Location: ../src/html/login.html");
+  exit;
+}
+
 if (!isset($_COOKIE['id_usuario'])) {
     echo "Você precisa estar logado para acessar esta página.";
     exit;

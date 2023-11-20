@@ -1,6 +1,12 @@
 <?php
 
 $login_ativo = $_COOKIE['id_usuario'];
+
+if (!isset($login_ativo)) {
+    
+  header("Location: ../src/html/login.html");
+  exit;
+}
 $novo_email = $_POST['novo_email'];
 $senha = $_POST['senha'];
 

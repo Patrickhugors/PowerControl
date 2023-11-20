@@ -1,6 +1,12 @@
 <?php
+
+$login_ativo = $_COOKIE['id_usuario'];
+
+if (!isset($login_ativo)) {
     
-    $login_ativo = $_COOKIE['id_usuario'];
+  header("Location: ../src/html/login.html");
+  exit;
+}
     $nome = $_POST['eletrodomestico']; 
     $consumo = $_POST['consumo'];
     $horas = $_POST['horas'];

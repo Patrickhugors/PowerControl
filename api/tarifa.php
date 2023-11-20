@@ -1,6 +1,12 @@
 <?php
 
 $login_ativo = $_COOKIE['id_usuario'];
+
+if (!isset($login_ativo)) {
+    
+  header("Location: ../src/html/login.html");
+  exit;
+}
 $valor = isset($_POST['tarifa']) ? str_replace(',', '.', $_POST['tarifa']) : '';
 $companhia = isset($_POST['nomeDistribuidora']) ? $_POST['nomeDistribuidora'] : '';
 $UF = isset($_POST['uf']) ? $_POST['uf'] : '';
