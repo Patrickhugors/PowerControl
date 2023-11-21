@@ -26,5 +26,6 @@ Tiago Nunes Do Carmo
 Victor Hugo Januzzi                                                                                                                                                 
 
 Link de funcionamento do projeto no youtube: https://youtu.be/SI-KP-jfxoQ
+
 Site: https://power-control.vercel.app/
 
