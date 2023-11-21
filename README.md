@@ -1,7 +1,6 @@
-PROJETO INTEGRADOR V – 2ª ETAPA - GRUPO 05
+PROJETO INTEGRADOR V – 2ª ETAPA 
 
-Trabalho de Projeto Integrador V – Fase 2 desenvolvido como exigência para obtenção de nota parcial para o 5º semestre do curso de Análise e Desenvolvimento de Sistemas - Centro 
-Universitário SENAC, sob orientação do Professore Evandro Teruel.
+Trabalho de conclusão de curso para o 5º semestre do curso de Análise e Desenvolvimento de Sistemas - Centro Universitário SENAC, sob orientação dos Professores  Julio Cesar e Evandro Carlos Teruel.
 
 Pré-requisitos
 
