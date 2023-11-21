@@ -16,19 +16,15 @@ Instalação
 • Abra o navegador web e acesse o link da página inicial: http://localhost/powercontrol/src/html/home.html.                                                                                                                     
 • Certifique-se de ter o XAMPP instalado corretamente e de que o caminho dos diretórios mencionados esteja de acordo com a sua instalação específica do XAMPP.                                              
 
+
 Autores
 
-CLARISSA KOGIK GOTTFRIED
+Clarissa Kogik Gottfried                                                                                                                                                   
+Cristiano Soeiro Da Rosa                                                                                                                                                 
+Patrick Hugo Rodrigues Da Silva                                                                                                                                                 
+Tiago Nunes Do Carmo                                                                                                                                                 
+Victor Hugo Januzzi                                                                                                                                                 
 
-CRISTIANO SOEIRO DA ROSA
-
-PATRICK HUGO RODRIGUES DA SILVA
-
-VICTOR HUGO JANUZZI
-
-TIAGO NUNES DO CARMO
-
-
+Link de funcionamento do projeto no youtube: https://youtu.be/SI-KP-jfxoQ
 Site: https://power-control.vercel.app/
 
-Funcionamento do Projeto: https://youtu.be/SI-KP-jfxoQ
